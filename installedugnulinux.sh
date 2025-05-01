@@ -1,4 +1,4 @@
-\sudo apt remove gnome-calendar gnome-camera gnome-characters gnome-clocks gnome-connections gnome-disk-utility gnome-extensions-app gnome-maps gnome-music gnome-software totem
+sudo apt remove gnome-calendar gnome-camera gnome-characters gnome-clocks gnome-connections gnome-disk-utility gnome-extensions-app gnome-maps gnome-music gnome-software totem
 sudo apt purge gnome-calendar gnome-camera gnome-characters gnome-clocks gnome-connections gnome-disk-utility gnome-extensions-app gnome-maps gnome-music gnome-software totem
 sudo apt autoremove
 sudo apt update && sudo apt upgrade
