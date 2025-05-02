@@ -34,6 +34,8 @@ sudo apt update && sudo apt upgrade -y
 # Update Flatpak packages
 flatpak update
 
+# SSH into local server, fetch credentials, and pass it to lightdm
+
 # Start lightdm
 sudo systemctl start lightdm
 
