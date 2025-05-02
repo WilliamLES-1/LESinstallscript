@@ -29,10 +29,10 @@ sudo apt install -y libreoffice-writer libreoffice-calc libreoffice-draw libreof
 
 # Setting up Flatpak for software unavailable or too old in apt's repository
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install -y flathub org.gcompris.GCompris
-flatpak install -y flathub org.scratch.Scratch
-flatpak install -y flathub org.ungoogled.chromium.Chromium
-flatpak install -y flathub com.vscodium.codium
+flatpak install flathub org.gcompris.GCompris
+flatpak install flathub org.scratch.Scratch
+flatpak install flathub org.ungoogled.chromium.Chromium
+flatpak install flathub com.vscodium.codium
 
 # If the GNOME Display Manager is active (0), stop and disable it to avoid conflicts with lightdm
 if systemctl is-active --quiet gdm3; then
@@ -45,13 +45,13 @@ if ! systemctl is-active --quiet lightdm; then
     sudo systemctl enable lightdm
 fi
 
+# SSH into local server, fetch credentials, and pass it to lightdm
+
+# Start lightdm
+sudo systemctl start lightdm
+
 # Update and upgrade packages
 sudo apt update && sudo apt upgrade -y
 
 # Update Flatpak packages
 flatpak update
-
-# SSH into local server, fetch credentials, and pass it to lightdm
-
-# Start lightdm
-sudo systemctl start lightdm
