@@ -25,14 +25,13 @@ sudo apt purge -y gnome-calendar gnome-camera gnome-characters gnome-clocks gnom
 sudo apt autoremove -y
 
 # Installing from apt's repository
-sudo apt install -y libreoffice-writer libreoffice-calc libreoffice-draw libreoffice-impress tuxpaint tuxtype tuxmath kanagram gimp flatpak icecat lightdm
+sudo apt install -y libreoffice-writer libreoffice-calc libreoffice-draw libreoffice-impress tuxpaint tuxtype tuxmath kanagram gimp flatpak icecat lightdm geany
 
 # Setting up Flatpak for software unavailable or too old in apt's repository
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub org.gcompris.GCompris
 flatpak install flathub org.scratch.Scratch
 flatpak install flathub org.ungoogled.chromium.Chromium
-flatpak install flathub com.vscodium.codium
 
 # If the GNOME Display Manager is active (0), stop and disable it to avoid conflicts with lightdm
 if systemctl is-active --quiet gdm3; then
